@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=7,8,edge" />
+  <meta name="keywords" content="Password Generator, stronger password,secure password,html,css,javascript" />
+  <meta name="theme-color" content="#356aa6" />
+  <link rel="stylesheet" href="style.css" />
+  <!--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" media="all">
+  <title>Password Generator | by Qasim</title>
+</head>
+<body>
+  <!-- pre loader -->
+  <div class="loader">
+    <div></div>
+  </div>
+  <!-- navigation button -->
+  <nav class="nav">
+    <div id="btn">
+      menu
+    </div>
+    <span id="mode">brightness_4</span>
+  </nav>
+  <!-- sidebar -->
+  <div id="menu">
+    <ul>
+      <li><a href="#" id="about">About</a></li>
+      <li><a href="https://qa-sim.netlify.app" target="_blank">Portfolio</a></li>
+      <li><a href="http://cv-builder.epizy.com">CV Builder</a></li>
+      <li><a href="https://fastersites.netlify.app">Faster Sites</a></li>
+      <li><a href="https://binary-qasim.netlify.app">Binary Converter</a></li>
+    </ul>
+  </div>
+  <!-- about -->
+  <div class="about">
+    <div>
+      <h2>About</h2>
+      <span id="close">cancel</span>
+    </div>
+    <p>
+      Hi, I think everybody need to a stronger password to save important data. <br />I'm Qasim Sarwari, created this password generator webApp using html, css and javascript. hope this webApp helpfull to you!
+    </p>
+  </div>
+  <div class="container animated bounceInDown">
+    <h2>Password Generator</h2>
+    <p id="error"></p>
+    <br />
+    <h3 class="sel">Select kind of password</h3>
+    <div class="line"></div>
+    <div class="box">
+      <label for="check1">
+        <input type="checkbox" id="check1" />
+        Alphabets
+      </label>
+      <label for="check2">
+        <input type="checkbox" id="check2" />
+        Numbers
+      </label>
+      <label for="check3">
+        <input type="checkbox" id="check3" />
+        Characters
+      </label>
+    </div>
+    <input type="number" id="len" placeholder="Enter Password length" autofocus />
+    <div class="bar">
+      <div id="progress"></div>
+    </div>
+    <button id="gen">Generate  <span id="cp">autorenew</span></button>
+    <br />
+    <br />
+    <h3 class="ps">Your Generated Password</h3>
+    <input type="text" id="pass" placeholder="Generated Password" />
+    <button id="copy">Copy <span id="cp">content_copy</span></button>
+  </div>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!--<script src="res/jquery.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+  setTimeout(()=>{
+    $(".loader").fadeOut(200);
+  },4000)
+    $("#gen").click(()=> {
+      // by Qasim Sarwari
+      var alp, num, char, p_len;
+      alp = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      num = "1234567890";
+      char = "@#$%&*+-()!:\\[×;/?<\¢,>[']{}|_^×";
+      var str = "";
+      var check1 = document.getElementById("check1");
+      var check2 = document.getElementById("check2");
+      var check3 = document.getElementById("check3");
+      // checking
+      if (check1.checked == true) {
+        str += alp;
+      }
+      if (check2.checked == true) {
+        str += num;
+      }
+      if (check3.checked == true) {
+        str += char;
+      }
+      // password length
+      p_len = document.getElementById("len").value;
+      if (p_len == '' || p_len == null) {
+        $("#error").html("Please enter password length!");
+        return false;
+      } else {
+        $("#error").html("");
+      }
+      if (str == '' || str == null) {
+        $("#error").html("Can't create password without alphabuts, numbers and specials chars! please select at lest one");
+        return false;
+      } else {
+        $("#error").html("");
+      }
+      var pass = "";
+      for (i = 1; i <= p_len; i++) {
+        pass += str[Math.floor((Math.random() * str.length))];
+      }
+      $("#pass").val(pass);
+    });
+    // Password progress bar
+    $("#len").on("keyup", ()=> {
+      p_len = $("#len").val();
+      if (p_len >= 4) {
+        $("#progress").css({
+          "width": "30%", "background": "tomato"
+        });
+      } else {
+        $("#progress").css("width", "0%")
+      }
+      if (p_len >= 8) {
+        $("#progress").css({
+          "width": "70%", "background": "#356aa6"
+        });
+      }
+      if (p_len >= 12) {
+        $("#progress").css({
+          "width": "100%", "background": "#1876f3"
+        });
+      }
+    });
+    $("#copy").click(()=> {
+      var get_pass = document.getElementById("pass").value;
+      get_pass.select();
+      get_pass.setSelectionRange(0, 99999);
+      document.execCommand('copy');
+
+      alert("Copied!");
+    });
+    // nav toggle
+    var x = 0;
+    $("#mode").click(()=> {
+      if (x == 0) {
+        x = 1;
+        $("#mode").html("brightness_5");
+        $("body,.nav,#menu,.container").addClass("dark");
+      } else {
+        x = 0;
+        $("#mode").html("brightness_4")
+        $("body,.nav,#menu,.container").removeClass("dark");
+      }
+    });
+    $("#btn").click(()=> {
+      if (x == 0) {
+        x = 1;
+        $("#btn").html("close");
+        $("#btn,#menu").addClass("act");
+      } else {
+        x = 0;
+        $("#btn").html("menu");
+        $("#btn,#menu").removeClass("act");
+      }
+    });
+    document.onclick = ((e)=> {
+      if (e.target.id !== 'btn' && e.target.id !== 'menu' && e.target.id !== 'mode') {
+        $("#btn").html("menu");
+        $("#btn,#menu").removeClass("act");
+      }
+    })
+    $("#about").click(()=> {
+      $(".about").addClass("act");
+    });
+    $("#close").click(()=> {
+      $(".about").removeClass("act")
+    })
+  </script>
+</body>
+</html>
