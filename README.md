@@ -1,2 +1,2 @@
 # Password_generator
-https://psw_gen.netlify.app
+https://psw-gen.netlify.app
