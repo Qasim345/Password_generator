@@ -25,7 +25,7 @@ body {
 body.dark {
   background: #333;
 }
-.loader{
+/*.loader{
   position: fixed;
   top: 0;
   left: 0;
@@ -59,7 +59,7 @@ body.dark {
 }
 .back.act{
   display: block;
-}
+}*/
 .nav {
   position: fixed;
   top: 0;
@@ -191,7 +191,7 @@ body.dark {
   background: #fff;
   overflow: hidden;
   border: 2px solid #356aa6;
-  animation-delay: 4.1s;
+  animation-delay: 1s;
 }
 .container.dark {
   background: #000;
