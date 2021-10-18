@@ -139,7 +139,7 @@
       }
     });
     $("#copy").click(()=> {
-      var get_pass = document.getElementById("pass").value;
+      var get_pass = document.getElementById("pass");
       get_pass.select();
       get_pass.setSelectionRange(0, 99999);
       document.execCommand('copy');
