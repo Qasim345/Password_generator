@@ -344,6 +344,14 @@ body.dark {
 .container #cp {
   font-family: 'material-icons';
 }
+.wapp{
+  position: fixed;
+  font-family: 'material-icons';
+  bottom: 20px;
+  right: 20px;
+  font-size: 22px;
+  z-index: 5;
+}
 @media screen and (max-width: 400px) {
   .container {
     width: 90%;
