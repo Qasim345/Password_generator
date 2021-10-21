@@ -87,7 +87,6 @@ body.dark {
   display: grid;
   place-items: center;
   overflow: hidden;
-  font-family: 'material-icons';
   font-size: 22px;
   transition: 0.3s;
 }
@@ -95,7 +94,6 @@ body.dark {
   transform: rotate(360deg);
 }
 .nav #mode {
-  font-family: 'material-icons';
   font-size: 18px;
   transition: 0.3s;
 }
@@ -181,7 +179,6 @@ body.dark {
   margin-bottom: 10px;
 }
 .about div span{
-  font-family: 'material-icons';
   font-size: 20px;
 }
 .container {
