@@ -349,7 +349,7 @@ body.dark {
   text-align: center;
   line-height: 50px;
   font-size: 30px;
-  box-shadow: 0 0 30px rgba(0,0,0,0.2);
+  box-shadow: 0 0 30px rgb(17,153,119,0.2);
   color: #fff;
   background:#24af8c;
   z-index: 10;
