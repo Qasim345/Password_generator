@@ -338,9 +338,6 @@ body.dark {
   align-items: center;
   justify-content: space-around;
 }
-.container #cp {
-  font-family: 'material-icons';
-}
 #wa{
   position: fixed;
  /* font-family: 'material-icons';*/
