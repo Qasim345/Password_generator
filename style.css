@@ -346,7 +346,6 @@ body.dark {
 }
 .wapp{
   position: fixed;
-  content: '';
   font-family: 'material-icons';
   bottom: 20px;
   right: 20px;
