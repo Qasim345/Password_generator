@@ -11,10 +11,10 @@
   font-family: 'ProductSans';
   src: url(ProductSans.ttf);
 }
-@font-face {
+/*@font-face {
   font-family: 'material-icons';
   src: url(material-icons.ttf);
-}
+}*/
 body {
   display: grid;
   place-items: center;
